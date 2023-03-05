@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
 import CreateAnnouncement from "./pages/CreateAnnouncement";
 import Announcement from "./pages/Announcement"
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-    <Navbar/>
+   <Navbar/> 
         <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/create' element={<CreateAnnouncement />}/>

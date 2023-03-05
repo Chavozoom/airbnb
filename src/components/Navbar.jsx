@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import logo from "../assets/airbnb.svg";
-import list from '../assets/list.svg';
+import list from "../assets/list.svg";
+import search from "../assets/search.svg";
 
-import Login from "./Login";
-import Register from "./Register";
+import DialogBoxLogin from "./DialogLogin";
+import DialogBoxRegister from "./DialogRegister";
 
 function Navbar() {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -26,14 +30,37 @@ function Navbar() {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <div className="flex items-center border-2 rounded-full py-2">
+          <form class="px-11 d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search for the place"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              <img src={search} alt="Search" />
+            </button>
+          </form>
+        </div>
+
+        <div
+          class="collapse navbar-collapse list-inline"
+          id="navbarSupportedContent"
+        >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/create">
+              <a
+                class="nav-link active list-inline"
+                aria-current="page"
+                href="/create"
+              >
                 Anuncie seu espaço no Airbnb
               </a>
             </li>
           </ul>
+
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -43,30 +70,51 @@ function Navbar() {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-                <img src={list} alt=""  width="100" height="40" />
+              <img src={list} alt="" width="100" height="40" />
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="#">
-                  < Register />
-                </a>
+                <button
+                  onClick={() => setShowRegister(true)}
+                  class="dropdown-item"
+                >
+                  <strong>Cadastrar-se</strong>
+                </button>
               </li>
+
               <li>
-                <a class="dropdown-item" href="#">
-                  <Login />
-                </a>
+                <button
+                  onClick={() => setShowLogin(true)}
+                  class="dropdown-item"
+                >
+                  Entrar
+                </button>
               </li>
+
               <li>
                 <hr class="dropdown-divider" />
               </li>
+
               <li>
                 <a class="dropdown-item" href="/create">
-                Anuncie seu espaço no Airbnb
+                  Anuncie seu espaço no Airbnb
                 </a>
               </li>
             </ul>
           </li>
         </div>
+      </div>
+      <div>
+        <DialogBoxLogin
+          showLogin={showLogin}
+          onCloseLogin={() => setShowLogin(false)}
+        />
+      </div>
+      <div>
+        <DialogBoxRegister
+          showRegister={showRegister}
+          onCloseRegister={() => setShowRegister(false)}
+        />
       </div>
     </nav>
   );

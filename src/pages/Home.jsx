@@ -1,16 +1,10 @@
-import React from 'react'
-import Register from '../components/Register';
-import Login from '../components/Login';
+import React, { useState } from "react";
 
 function Home() {
-
   return (
     <div className="Home">
-      <h1>Home</h1>
-      <Register />
-      <Login />
     </div>
-  )
+  );
 }
 
 export default Home;
