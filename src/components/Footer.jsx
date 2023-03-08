@@ -8,7 +8,7 @@ function Footer() {
   return (
     <>
       <div
-        className="d-md-none fixed-bottom bg-light d-flex justify-content-evenly"
+        className="d-md-none fixed-bottom bg-light d-flex justify-content-evenly  my-2 "
         style={{ height: 65 }}
       >
         <div>
