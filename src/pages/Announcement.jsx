@@ -76,7 +76,7 @@ function Announcement() {
             <h3>{desc}</h3>
           </div>
           <div className="col text-end ">
-            <h3>R${price} noite</h3>
+            <h3><strong>R${price}</strong> noite</h3>
           </div>
           <div className="row">
             <p>4 hóspedes · 1 quarto · 2 camas · 1 banheiro</p>
