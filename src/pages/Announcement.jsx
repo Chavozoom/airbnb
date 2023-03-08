@@ -30,23 +30,23 @@ function Announcement() {
         </div>
         <div className="row">
           <div className="col-6 ">
-            <img class="w-100" src={imgSrc[0]} alt="Hotel" />
+            <img class="w-100" src={imgSrc[0]} alt="Hotel" height={406}/>
           </div>
           <div className="col-6 ">
             <div className="row">
               <div className="col">
-                <img class="w-100" src={imgSrc[0]} alt="Hotel" />
+                <img class="w-100" src={imgSrc[1]} alt="Hotel" height={200}/>
               </div>
               <div className="col">
-                <img class="w-100" src={imgSrc[0]} alt="Hotel" />
+                <img class="w-100" src={imgSrc[2]} alt="Hotel" height={200} />
               </div>
             </div>
             <div className="row">
               <div className="col">
-                <img class="w-100 mt-2" src={imgSrc[0]} alt="Hotel" />
+                <img class="w-100 mt-2" src={imgSrc[3]} alt="Hotel" height={200}/>
               </div>
               <div className="col">
-                <img class="w-100 mt-2" src={imgSrc[0]} alt="Hotel" />
+                <img class="w-100 mt-2" src={imgSrc[4]} alt="Hotel" height={200}/>
               </div>
             </div>
           </div>

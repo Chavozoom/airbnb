@@ -27,7 +27,7 @@ function Navbar() {
               <input
                 class="form-control me-1"
                 type="search"
-                placeholder="Search for the place"
+                placeholder="Comece sua busca"
                 aria-label="Search"
               />
               <button class="btn btn-outline-light" type="submit">
@@ -43,7 +43,7 @@ function Navbar() {
                   <a
                     class="btn btn-primary-outline mt-2 ms-5 d-none d-lg-block "
                     aria-current="page"
-                    href="/create"
+                    href="https://www.airbnb.com.br/host/homes"
                   >
                     Anuncie seu espaço no Airbnb
                   </a>
@@ -95,7 +95,7 @@ function Navbar() {
                   </li>
 
                   <li>
-                    <a class="dropdown-item " href="/create">
+                    <a class="dropdown-item " href="https://www.airbnb.com.br/host/homes">
                       Anuncie seu espaço no Airbnb
                     </a>
                   </li>
