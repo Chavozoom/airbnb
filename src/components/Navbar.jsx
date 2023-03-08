@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import logo from "../assets/airbnb.svg";
 import list from "../assets/list.svg";
 import search from "../assets/search.svg";
+import user from "../assets/person-circle.svg";
 
 import DialogBoxLogin from "./DialogLogin";
 import DialogBoxRegister from "./DialogRegister";
@@ -12,111 +13,119 @@ function Navbar() {
   const [showRegister, setShowRegister] = useState(false);
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <div class="container">
-          <a class="navbar-brand" href="/">
+    <>
+      <div class="row my-2">
+        <div class="col d-none d-md-block">
+          <a class=" ms-5" href="/">
             <img src={logo} alt="logo" width="120" height="60" />
           </a>
         </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div className="flex items-center border-2 rounded-full py-2">
-          <form class="px-11 d-flex">
+        <div class="col">
+          <form class="d-flex flex items-center border-2 rounded-full py-2">
             <input
-              class="form-control me-2"
+              class="form-control me-1"
               type="search"
               placeholder="Search for the place"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-light" type="submit">
               <img src={search} alt="Search" />
             </button>
           </form>
         </div>
 
-        <div
-          class="collapse navbar-collapse list-inline"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link active list-inline"
-                aria-current="page"
-                href="/create"
-              >
-                Anuncie seu espaço no Airbnb
-              </a>
-            </li>
-          </ul>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="/"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img src={list} alt="" width="100" height="40" />
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="col d-none d-md-block">
+          <div class="d-flex ">
+            <ul class="navbar-nav me-auto d-none d-md-block">
               <li>
-                <button
-                  onClick={() => setShowRegister(true)}
-                  class="dropdown-item"
+                <a
+                  class="btn btn-primary-outline mt-2 ms-5"
+                  aria-current="page"
+                  href="/create"
                 >
-                  <strong>Cadastrar-se</strong>
-                </button>
-              </li>
-
-              <li>
-                <button
-                  onClick={() => setShowLogin(true)}
-                  class="dropdown-item"
-                >
-                  Entrar
-                </button>
-              </li>
-
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a class="dropdown-item" href="/create">
                   Anuncie seu espaço no Airbnb
                 </a>
               </li>
             </ul>
-          </li>
+
+            <div class="dropdown me-3 my-auto d-none d-md-block">
+              <button
+                class="btn btn-white dropdown-toggle rounded"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img src={list} alt="menu" width="50" height="30" />
+                <img
+                  src={user}
+                  class="rounded-circle"
+                  alt="person"
+                  width="30"
+                  height="30"
+                />
+              </button>
+
+              <ul
+                class="dropdown-menu me-5"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <button
+                    onClick={() => setShowRegister(true)}
+                    class="dropdown-item"
+                  >
+                    <strong>Cadastrar-se</strong>
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    onClick={() => setShowLogin(true)}
+                    class="dropdown-item"
+                  >
+                    Entrar
+                  </button>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="/create">
+                    Anuncie seu espaço no Airbnb
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="collapse list-inline">
+              <li class="dropdown"></li>
+
+              <div>
+                <DialogBoxLogin
+                  showLogin={showLogin}
+                  onCloseLogin={() => setShowLogin(false)}
+                />
+              </div>
+              <div>
+                <DialogBoxRegister
+                  showRegister={showRegister}
+                  onCloseRegister={() => setShowRegister(false)}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-        <DialogBoxLogin
-          showLogin={showLogin}
-          onCloseLogin={() => setShowLogin(false)}
-        />
+
+      <div className="row h-100">
+        <div className="col bg-warning">.</div>
+        <div className="col bg-dark">f</div>
       </div>
-      <div>
-        <DialogBoxRegister
-          showRegister={showRegister}
-          onCloseRegister={() => setShowRegister(false)}
-        />
-      </div>
-    </nav>
+    </>
   );
 }
 

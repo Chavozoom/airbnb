@@ -28,10 +28,10 @@ export default function DialogBoxRegister({ showRegister, onCloseRegister }) {
     <div>
 
       <Dialog open={showRegister} onClose={onCloseRegister}>
-        <DialogTitle>Register</DialogTitle>
+        <DialogTitle>Registar</DialogTitle>
 
         <DialogContentText>
-          <strong>Bem-vindo ao Airbnb</strong>
+          <strong class="ms-4">Bem-vindo ao Airbnb</strong>
         </DialogContentText>
         <DialogContent>
           <input
@@ -82,8 +82,8 @@ export default function DialogBoxRegister({ showRegister, onCloseRegister }) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={onCloseRegister}>Cancel</Button>
-          <Button onClick={() => handleSubmit(onSubmit)()}>Register</Button>
+          <Button onClick={onCloseRegister}>Cancelar</Button>
+          <Button onClick={() => handleSubmit(onSubmit)()}>Registrar</Button>
         </DialogActions>
       </Dialog>
     </div>

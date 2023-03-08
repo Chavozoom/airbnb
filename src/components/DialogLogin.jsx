@@ -9,7 +9,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 
 export default function DialogBoxLogin({ showLogin, onCloseLogin }) {
 
-
   const {
     register,
     handleSubmit,
@@ -22,18 +21,17 @@ export default function DialogBoxLogin({ showLogin, onCloseLogin }) {
     },
   });
 
-
   const onSubmit = (data) => {
     console.log(data);
   };
-  
+
   return (
     <div>
       <Dialog open={showLogin} onClose={onCloseLogin}>
         <DialogTitle>Login</DialogTitle>
 
         <DialogContentText>
-          <strong>Bem-vindo ao Airbnb</strong>
+          <strong class="ms-4">Bem-vindo ao Airbnb</strong>
         </DialogContentText>
         <DialogContent>
           <input
@@ -69,8 +67,9 @@ export default function DialogBoxLogin({ showLogin, onCloseLogin }) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={onCloseLogin}>Cancel</Button>
-          <Button onClick={() => handleSubmit(onSubmit)()}>Login</Button>
+          <Button variant="outlined" onClick={() => handleSubmit(onSubmit)()}>
+            Continuar
+          </Button>
         </DialogActions>
       </Dialog>
     </div>
