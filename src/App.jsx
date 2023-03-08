@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import './AppStyle.css'
 
 import CreateAnnouncement from "./pages/CreateAnnouncement";
 import Announcement from "./pages/Announcement";

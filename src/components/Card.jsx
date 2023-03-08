@@ -1,10 +1,24 @@
 import React from "react";
 import Carousel from "./ImageCarousel";
+import { useNavigate } from "react-router-dom";
 import Star from "../assets/star-fill.svg";
+import Announcement from "../pages/Announcement";
 
 function Card({ rating, imgSrc, price, date, title, desc }) {
+  
+  const navigate = useNavigate();
+  const data = { rating, imgSrc, price, date, title, desc };
+
+  const directAnnouncement = () => {
+    navigate("/announcement", {
+      state: {
+        data: data,
+      },
+    });
+  };
+
   return (
-    <div class="col mx-2 mb-5">
+    <div class="col mt-5">
       <div
         class="card"
         style={{ width: "320px", height: "400px", border: "none" }}
@@ -24,7 +38,10 @@ function Card({ rating, imgSrc, price, date, title, desc }) {
           <p class="card-title">
             R$<strong>{price}</strong> noite
           </p>
-          <a href="#" class="stretched-link"></a>
+          <button
+            className="btn stretched-link"
+            onClick={directAnnouncement}
+          ></button>
         </div>
       </div>
     </div>

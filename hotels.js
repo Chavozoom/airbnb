@@ -10,7 +10,7 @@ export const hotel1 = [
       ],
       price: "2000",
       date: "15-20 May",
-      title: "Hotel 0000",
+      title: "Hotel 1",
     },
     {
       rating: "4",
