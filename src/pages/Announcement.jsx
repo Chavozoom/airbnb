@@ -7,10 +7,10 @@ import ImageCarousel from "../components/ImageCarousel";
 function Announcement() {
   const location = useLocation();
   const { rating, desc, imgSrc, date, title, price } = location.state.data;
-  console.log(location);
 
   const copyURL = () => {
-    navigator.clipboard.writeText("BPIJSGAPJ");
+    navigator.clipboard.writeText(window.location.href);
+    console.log(navigator.clipboard);
   };
 
   return (
@@ -80,6 +80,9 @@ function Announcement() {
           </div>
           <div className="row">
             <p>4 hóspedes · 1 quarto · 2 camas · 1 banheiro</p>
+          </div>
+          <div className="row">
+            <p>{date}</p>
           </div>
         </div>
       </div>

@@ -4,9 +4,11 @@ import logo from "../assets/airbnb.svg";
 import list from "../assets/list.svg";
 import search from "../assets/search.svg";
 import user from "../assets/person-circle.svg";
+import { useForm } from "react-hook-form";
 
 import DialogBoxLogin from "./DialogLogin";
 import DialogBoxRegister from "./DialogRegister";
+import Home from "../pages/Home";
 
 function Navbar() {
   const [showLogin, setShowLogin] = useState(false);
@@ -16,24 +18,10 @@ function Navbar() {
     <>
       <nav className="fixed-top bg-body">
         <div class="row my-2 fixed ">
-          <div class="col d-none d-md-block">
+          <div class="col">
             <a class=" ms-5" href="/">
               <img src={logo} alt="logo" width="120" height="60" />
             </a>
-          </div>
-
-          <div class="col">
-            <form class="d-flex flex items-center border-2 rounded-full py-2">
-              <input
-                class="form-control me-1"
-                type="search"
-                placeholder="Comece sua busca"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-light" type="submit">
-                <img src={search} alt="Search" />
-              </button>
-            </form>
           </div>
 
           <div class="col d-none d-md-block">
@@ -95,7 +83,10 @@ function Navbar() {
                   </li>
 
                   <li>
-                    <a class="dropdown-item " href="https://www.airbnb.com.br/host/homes">
+                    <a
+                      class="dropdown-item "
+                      href="https://www.airbnb.com.br/host/homes"
+                    >
                       Anuncie seu espaço no Airbnb
                     </a>
                   </li>
@@ -121,11 +112,6 @@ function Navbar() {
             </div>
           </div>
         </div>
-
-        {/* <div className="row d-none d-md-block">
-          <div className="col bg-warning">.</div>
-          <div className="col bg-dark">f</div>
-        </div> */}
       </nav>
     </>
   );

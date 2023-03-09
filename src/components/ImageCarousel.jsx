@@ -19,6 +19,7 @@ export default function ControlledCarousel({ imgSrc }) {
               alt={"image " + id}
               height={190}
               width={288}
+              key={id}
             />
           </Carousel.Item>
         );

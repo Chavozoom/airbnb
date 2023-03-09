@@ -4,7 +4,7 @@ import img3 from "./src/images/img3.png";
 import img4 from "./src/images/img4.png";
 import img5 from "./src/images/img5.png"
 
-export const hotel1 = [
+export let hotel1 = [
   {
     rating: "4",
     desc: "Beach and Sunset Views",

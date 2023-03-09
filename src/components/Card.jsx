@@ -2,9 +2,9 @@ import React from "react";
 import Carousel from "./ImageCarousel";
 import { useNavigate } from "react-router-dom";
 import Star from "../assets/star-fill.svg";
-import Announcement from "../pages/Announcement";
 
 function Card({ rating, imgSrc, price, date, title, desc }) {
+  
   const navigate = useNavigate();
   const data = { rating, imgSrc, price, date, title, desc };
 
@@ -35,7 +35,7 @@ function Card({ rating, imgSrc, price, date, title, desc }) {
           <p class="card-title">{desc}</p>
           <p class="card-title">{date}</p>
           <p class="card-title">
-            <strong>R${price}</strong> noite
+          <strong>R${price}</strong> noite
           </p>
           <button
             className="btn stretched-link"

@@ -1,25 +1,13 @@
 import React from "react";
-import Card from "../components/Card";
 import { hotel1 } from "../../hotels";
+import CreateCards from "../components/CreateCard";
 
 function Home() {
+
   return (
     <div className="Home mt-5 ms-4">
       <div class="row row-cols-auto justify-content-evenly">
-        {hotel1.map((hotel, id) => {
-          const {rating, desc, imgSrc, date, title, price} = hotel;
-          return (
-            <Card
-              key={id}
-              rating={rating}
-              desc={desc}
-              imgSrc={imgSrc}
-              date={date}
-              title={title + id}
-              price={price}
-            />
-          );
-        })}
+          <CreateCards key="hotelArray" hotel1={hotel1} />;
       </div>
     </div>
   );
